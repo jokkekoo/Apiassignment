@@ -50,7 +50,7 @@ namespace apiassignment.Repository
         {
             var query = "UPDATE Products SET Product_Name = '" + name + "' WHERE ID_Products = " + id;
 
-            using (var connection = _context.CreateConnection()) // (5, 'Qualcom', 'ASDASDASD');
+            using (var connection = _context.CreateConnection()) 
             {
                 var isOK = await connection.QueryAsync<Products>(query);
                 return isOK.ToList();
